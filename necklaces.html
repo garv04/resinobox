@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necklaces - Resino Box</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Explore our exquisite collection of anti-tarnish necklaces at Resino Box. Handcrafted with quality materials.">
+</head>
+<body>
+    <header>
+        <div class="hero fade-in">
+            <h1>Necklace Collection</h1>
+            <p class="tagline">Timeless Elegance Around Your Neck</p>
+        </div>
+        <nav id="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="necklaces.html" class="active">Necklaces</a></li>
+                    <li><a href="bracelet.html">Bracelets</a></li>
+                    <li><a href="charms.html">Charms</a></li>
+                    <li><a href="sets.html">Sets</a></li>
+                    <li><a href="index.html#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="promo-banner fade-in">
+                <h2>Premium Anti-Tarnish Collection</h2>
+                <p>Our necklaces are made with high-quality anti-tarnish materials, ensuring they remain beautiful for years to come.</p>
+                <a href="#anti-tarnish" class="btn">Explore Collection</a>
+            </div>
+            
+            <section id="anti-tarnish" class="fade-in">
+                <h2>Anti-Tarnish Necklaces</h2>
+                <p class="section-description">Each necklace is carefully crafted to enhance your natural beauty with timeless designs.</p>
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be dynamically inserted here by main.js -->
+                </div>
+            </section>
+            
+            <section id="product-care" class="fade-in">
+                <h2>Jewelry Care Tips</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>While our anti-tarnish necklaces are designed to maintain their shine, proper care will extend their life and beauty:</p>
+                        <ul class="care-tips">
+                            <li><i class="fas fa-water"></i> Remove before swimming or showering</li>
+                            <li><i class="fas fa-spray-can"></i> Apply perfume and cosmetics before wearing jewelry</li>
+                            <li><i class="fas fa-tshirt"></i> Put on your jewelry after getting dressed</li>
+                            <li><i class="fas fa-box"></i> Store in a cool, dry place when not wearing</li>
+                            <li><i class="fas fa-cloth"></i> Clean with a soft, dry cloth after wearing</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Resino Box</h3>
+                <p>Exquisite handcrafted jewelry for every occasion.</p>
+                <p>Thank you for visiting our online store.</p>
+            </div>
+            
+            <div class="social-links">
+                <h4>Connect With Us</h4>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/resino.box" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Resino Box. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Page transition element -->
+    <div class="page-transition"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/helper.js"></script>
+    <script>
+        // Sticky Navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Animation for elements when they enter viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

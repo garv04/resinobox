@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charms - Resino Box</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Explore our delightful collection of charms at Resino Box. Handcrafted with quality materials.">
+</head>
+<body>
+    <header>
+        <div class="hero fade-in">
+            <h1>Charm Collection</h1>
+            <p class="tagline">Add a Personal Touch to Your Jewelry</p>
+        </div>
+        <nav id="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="necklaces.html">Necklaces</a></li>
+                    <li><a href="bracelet.html">Bracelets</a></li>
+                    <li><a href="charms.html" class="active">Charms</a></li>
+                    <li><a href="sets.html">Sets</a></li>
+                    <li><a href="index.html#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="promo-banner fade-in">
+                <h2>Unique Charm Collection</h2>
+                <p>Our charms are designed to tell your story, with each piece representing a special moment or meaning.</p>
+                <a href="#charms" class="btn">Explore Collection</a>
+            </div>
+            
+            <section id="charms" class="fade-in">
+                <h2>Beautiful Charms</h2>
+                <p class="section-description">Each charm is delicately crafted to add personality to your favorite necklaces and bracelets.</p>
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be dynamically inserted here by main.js -->
+                </div>
+            </section>
+            
+            <section id="charm-inspiration" class="fade-in">
+                <h2>Charm Inspiration</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Here are some ways to incorporate our charms into your jewelry collection:</p>
+                        <ul class="care-tips">
+                            <li><i class="fas fa-heart"></i> Create a personal bracelet with charms that tell your story</li>
+                            <li><i class="fas fa-gift"></i> Gift a meaningful charm to someone special</li>
+                            <li><i class="fas fa-star"></i> Collect charms to celebrate important milestones</li>
+                            <li><i class="fas fa-magic"></i> Mix and match different charms for a unique look</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Resino Box</h3>
+                <p>Exquisite handcrafted jewelry for every occasion.</p>
+                <p>Thank you for visiting our online store.</p>
+            </div>
+            
+            <div class="social-links">
+                <h4>Connect With Us</h4>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/resino.box" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Resino Box. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Page transition element -->
+    <div class="page-transition"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/helper.js"></script>
+    <script>
+        // Sticky Navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Animation for elements when they enter viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

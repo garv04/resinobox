@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Sets - Resino Box</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Explore our exquisite collection of jewelry sets at Resino Box. Handcrafted with quality materials.">
+</head>
+<body>
+    <header>
+        <div class="hero fade-in">
+            <h1>Jewelry Sets Collection</h1>
+            <p class="tagline">Complete Ensembles for Elegant Style</p>
+        </div>
+        <nav id="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="necklaces.html">Necklaces</a></li>
+                    <li><a href="bracelet.html">Bracelets</a></li>
+                    <li><a href="charms.html">Charms</a></li>
+                    <li><a href="sets.html" class="active">Sets</a></li>
+                    <li><a href="index.html#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="promo-banner fade-in">
+                <h2>Handcrafted Jewelry Sets Collection</h2>
+                <p>Our coordinated jewelry sets are designed to give you a complete, elegant look with perfectly matched pieces.</p>
+                <a href="#sets-collection" class="btn">Explore Collection</a>
+            </div>
+            
+            <section id="sets-collection" class="fade-in">
+                <h2>Our Sets Collection</h2>
+                <p class="section-description">Each set is carefully curated to provide a harmonious and sophisticated look.</p>
+                <div class="product-grid" id="product-grid">
+                    <!-- Product items will be dynamically inserted here -->
+                </div>
+            </section>
+            
+            <section id="styling-tips" class="fade-in">
+                <h2>Styling Tips</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Make the most of your jewelry sets with these styling suggestions:</p>
+                        <ul class="care-tips">
+                            <li><i class="fas fa-gem"></i> Wear the complete set for formal occasions</li>
+                            <li><i class="fas fa-tshirt"></i> Mix and match set pieces with other jewelry for versatile looks</li>
+                            <li><i class="fas fa-palette"></i> Choose sets that complement your wardrobe color palette</li>
+                            <li><i class="fas fa-gift"></i> Jewelry sets make perfect gifts for special occasions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Resino Box</h3>
+                <p>Exquisite handcrafted jewelry for every occasion.</p>
+                <p>Thank you for visiting our online store.</p>
+            </div>
+            
+            <div class="social-links">
+                <h4>Connect With Us</h4>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/resino.box" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Resino Box. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Page transition element -->
+    <div class="page-transition"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/helper.js"></script>
+    <script>
+        // Sticky Navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Animation for elements when they enter viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Resino Box</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Explore our collection of handcrafted jewelry at Resino Box. From necklaces to rings, find the perfect piece.">
+</head>
+<body>
+    <header>
+        <div class="hero fade-in">
+            <h1>Our Collection</h1>
+            <p class="tagline">Discover Your Perfect Piece</p>
+        </div>
+        <nav id="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">All Products</a></li>
+                    <li><a href="necklaces.html">Necklaces</a></li>
+                    <li><a href="bracelet.html">Bracelets</a></li>
+                    <li><a href="charms.html">Charms</a></li>
+                    <li><a href="sets.html">Sets</a></li>
+                    <li><a href="index.html#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-main">
+        <div class="container">
+            <section class="category-section fade-in">
+                <h2>Jewelry Categories</h2>
+                <p class="section-description">Browse our handcrafted collections, each piece made with exceptional quality and attention to detail.</p>
+                
+                <div class="product-grid">
+                    <a href="necklaces.html" class="category-link">
+                        <div class="product-item category-item">
+                            <div class="product-image-container">
+                                <img src="images/necklaces/IMG_9426.JPG" alt="Necklace">
+                                <div class="category-overlay">
+                                    <span class="view-more">View Collection</span>
+                                </div>
+                            </div>
+                            <div class="product-details">
+                                <h3>Necklaces</h3>
+                                <p class="product-description">Elegant necklaces for every occasion</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bracelet.html" class="category-link">
+                        <div class="product-item category-item">
+                            <div class="product-image-container">
+                                <img src="images/bracelets/IMG_9430.JPG" alt="Bracelet">
+                                <div class="category-overlay">
+                                    <span class="view-more">View Collection</span>
+                                </div>
+                            </div>
+                            <div class="product-details">
+                                <h3>Bracelets</h3>
+                                <p class="product-description">Stunning bracelets to complement any style</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="charms.html" class="category-link">
+                        <div class="product-item category-item">
+                            <div class="product-image-container">
+                                <img src="images/charms/IMG_2442.jpg" alt="Charm">
+                                <div class="category-overlay">
+                                    <span class="view-more">View Collection</span>
+                                </div>
+                            </div>
+                            <div class="product-details">
+                                <h3>Charms</h3>
+                                <p class="product-description">Delicate charms to express your personality</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="sets.html" class="category-link">
+                        <div class="product-item category-item">
+                            <div class="product-image-container">
+                                <img src="images/sets/IMG1.jpg" alt="Jewelry Set">
+                                <div class="category-overlay">
+                                    <span class="view-more">View Collection</span>
+                                </div>
+                            </div>
+                            <div class="product-details">
+                                <h3>Sets</h3>
+                                <p class="product-description">Complete jewelry sets for a coordinated look</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="product-item category-item">
+                        <div class="product-image-container">
+                            <img src="images/rings/IMG_9431.JPG" alt="Ring">
+                            <div class="category-overlay">
+                                <span class="view-more">Coming Soon</span>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3>Rings</h3>
+                            <p class="product-description">Exquisite rings for special moments</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Resino Box</h3>
+                <p>Exquisite handcrafted jewelry for every occasion.</p>
+                <p>Thank you for visiting our online store.</p>
+            </div>
+            
+            <div class="social-links">
+                <h4>Connect With Us</h4>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/resino.box" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Resino Box. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Page transition element -->
+    <div class="page-transition"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/helper.js"></script>
+    <script>
+        // Sticky Navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Animation for elements when they enter viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
