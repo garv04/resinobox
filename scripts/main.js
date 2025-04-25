@@ -284,9 +284,13 @@ function displayProducts(productType) {
             const productItem = document.createElement('div');
             productItem.className = 'product-item';
             productItem.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.price}</p>
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-details">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">${product.price}</p>
+                </div>
             `;
             productGrid.appendChild(productItem);
         });
@@ -297,10 +301,14 @@ function displayProducts(productType) {
             const productItem = document.createElement('div');
             productItem.className = 'product-item';
             productItem.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.price}</p>
-                <p>${product.description}</p> <!-- Added description -->
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-details">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">${product.price}</p>
+                    <p class="product-description">${product.description}</p>
+                </div>
             `;
             productGrid.appendChild(productItem);
         });
@@ -311,9 +319,13 @@ function displayProducts(productType) {
             const productItem = document.createElement('div');
             productItem.className = 'product-item';
             productItem.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.price}</p>
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-details">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">${product.price}</p>
+                </div>
             `;
             productGrid.appendChild(productItem);
         });
@@ -324,10 +336,14 @@ function displayProducts(productType) {
             const productItem = document.createElement('div');
             productItem.className = 'product-item';
             productItem.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.price}</p>
-                <p>${product.description}</p>
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-details">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">${product.price}</p>
+                    <p class="product-description">${product.description}</p>
+                </div>
             `;
             productGrid.appendChild(productItem);
         });
